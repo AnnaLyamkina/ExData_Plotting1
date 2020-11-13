@@ -1,3 +1,16 @@
+##Update
+
+Behind the scene: need to determine in which lines our data 
+for 01/02/2007 and 01/02/2007 are located.
+library(lubridate)
+data_full <- read.csv2("household_power_consumption.txt")
+data_full$Date <- dmy(data_full$Date)
+Date1 <- dmy("01/02/2007")
+Date2 <- dmy("01/02/2007")
+data <- subset(data_full, Date == Date1 | Date == Date2)
+We can see that the data is from line 66637 to line 69516, 
+2880 rows. We read data from the original file accordingly
+
 ## Introduction
 
 This assignment uses data from
